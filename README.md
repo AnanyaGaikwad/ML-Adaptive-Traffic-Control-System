@@ -93,6 +93,33 @@ Flask Dashboard
 * Chart.js
 
 ---
+## Dataset and Models
+
+### Dataset
+
+The project uses traffic datasets representing a four-way intersection with features such as:
+
+- Vehicle counts
+- Queue lengths
+- Traffic density
+- Congestion levels
+- Vehicle movement patterns
+- Lane-wise traffic statistics
+
+The datasets are stored in the `data/` directory and are used for training, prediction, and simulation.
+
+### Machine Learning Models
+
+The repository includes pre-trained machine learning models for:
+
+- Traffic congestion prediction
+- Queue length estimation
+- Waiting time prediction
+- Traffic anomaly detection
+
+Models are stored in the `model/` and `data/models/` directories and are loaded dynamically during simulation execution.
+
+---
 
 ## Project Structure
 
@@ -106,10 +133,40 @@ ML-Adaptive-Traffic-Control-System
 ├── README.md
 ├── .gitignore
 │
-└── templates
-    └── dashboard.html
+├── templates
+│   └── dashboard.html
+│
+├── data
+│   ├── live_feedback_log.csv
+│   ├── predictions_4way_by_lane.csv
+│   ├── predictions_4way_full.csv
+│   ├── traffic_dataset_4way.csv
+│   └── models/
+│       ├── ml_congestion_classifier.pkl
+│       ├── ml_feature_names.pkl
+│       ├── ml_label_encoders.pkl
+│       ├── ml_queue_regressor.pkl
+│       └── ml_wait_regressor.pkl
+│
+├── model
+│   ├── anomaly_detector_4way.pkl
+│   ├── label_encoder_congestion.pkl
+│   ├── label_encoder_destination.pkl
+│   ├── label_encoder_origin.pkl
+│   ├── label_encoder_turn.pkl
+│   └── traffic_model_4way.pkl
+│
+└── images
+    ├── car1.png
+    ├── car2.jpg
+    ├── intersection.jpg
+    ├── mod_int.png
+    ├── down/
+    ├── left/
+    ├── right/
+    ├── up/
+    └── signals/
 ```
-
 ---
 
 ## Installation
@@ -149,12 +206,6 @@ Dashboard URL:
 ```text
 http://127.0.0.1:5000
 ```
-
----
-
-## Note
-
-Some project assets, including simulation images, trained machine learning models, and datasets, are being consolidated and will be added to the repository in future updates.
 
 ---
 
